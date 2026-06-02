@@ -1,0 +1,1086 @@
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L'evoluzione degli esseri viventi nel corso della storia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:   #0f1a1c;
+      --deep:  #0a2e2a;
+      --teal:  #0e6655;
+      --moss:  #1a7a5e;
+      --sage:  #4caf8c;
+      --gold:  #c9a84c;
+      --amber: #e8c56a;
+      --cream: #faf6ef;
+      --sand:  #f0e8d8;
+      --warm:  #fcf9f4;
+    }
+
+    html { scroll-behavior: smooth; }
+
+   body {
+  font-family: 'Inter', sans-serif;
+  background: var(--warm);
+  color: var(--ink);
+  line-height: 1.7;
+  padding-top: 0;
+}
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background: var(--deep);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      padding: 2rem;
+	  margin-top: 0;
+      padding-top: 6rem;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 110%, rgba(14,102,85,.55) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 20%, rgba(201,168,76,.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 10%, rgba(76,175,140,.08) 0%, transparent 60%),
+        linear-gradient(160deg, #050e0d 0%, #0a2e2a 50%, #071a18 100%);
+    }
+
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(201,168,76,.18) 1px, transparent 1px),
+        radial-gradient(circle, rgba(76,175,140,.08) 1px, transparent 1px);
+      background-size: 60px 60px, 30px 30px;
+      background-position: 0 0, 15px 15px;
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 820px; }
+
+    .hero-label {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--amber);
+      border: 1px solid rgba(201,168,76,.35);
+      padding: .4rem 1.1rem;
+      border-radius: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      font-weight: 900;
+      line-height: 1.12;
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em { font-style: italic; color: var(--amber); }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.6);
+      max-width: 560px;
+      margin: 0 auto 3rem;
+      font-weight: 300;
+    }
+
+    .hero-scroll {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      color: rgba(255,255,255,.4);
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .hero-scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, rgba(255,255,255,.4), transparent);
+      animation: scrollLine 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+      0%, 100% { transform: scaleY(1); opacity: .5; }
+      50% { transform: scaleY(.5); opacity: 1; }
+    }
+
+    /* NAV STRIP */
+   .nav-strip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  padding: 0.85rem 1.5rem;
+
+  background: var(--deep);
+  border-bottom: 1px solid rgba(76,175,140,.25);
+
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}
+.nav-strip a {
+  color: rgba(255,255,255,.7);
+  text-decoration: none;
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: .4rem .7rem;
+  border-radius: 20px;
+  transition: all .25s ease;
+}
+
+.nav-strip a:hover {
+  color: var(--amber);
+  background: rgba(201,168,76,.12);
+}
+
+    /* SECTIONS */
+    section { padding: 6rem 2rem; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .container-wide { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: .75rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--deep);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title em { font-style: italic; color: var(--teal); }
+
+    .lead {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: #3a4a48;
+      max-width: 680px;
+    }
+
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(to right, var(--gold), var(--sage));
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* INTRO */
+    #intro { background: var(--warm); border-bottom: 1px solid var(--sand); }
+
+    .intro-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+    .intro-stat {
+      border-left: 3px solid var(--sage);
+      padding: 1.25rem 1.5rem;
+      background: var(--cream);
+      border-radius: 0 .5rem .5rem 0;
+    }
+
+    .intro-stat strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--teal);
+      line-height: 1;
+      margin-bottom: .3rem;
+    }
+
+    .intro-stat span { font-size: .85rem; color: #5a6a68; }
+
+    /* TIMELINE */
+    #timeline { background: var(--cream); }
+
+    .timeline { position: relative; margin-top: 4rem; }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 2rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--sage), var(--teal), var(--deep));
+    }
+
+    .tl-item { position: relative; padding: 0 0 3rem 5.5rem; }
+
+    .tl-dot {
+      position: absolute;
+      left: calc(2rem - 7px);
+      top: .25rem;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--cream);
+      box-shadow: 0 0 0 2px var(--teal);
+    }
+
+    .tl-era {
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: .3rem;
+    }
+
+    .tl-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: .6rem;
+    }
+
+    .tl-item p { font-size: .92rem; color: #4a5a58; line-height: 1.7; max-width: 620px; }
+
+    .tl-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .75rem; }
+
+    .tl-tag {
+      background: rgba(14,102,85,.1);
+      color: var(--teal);
+      font-size: .72rem;
+      font-weight: 500;
+      padding: .25rem .65rem;
+      border-radius: 2rem;
+    }
+
+    /* THEORIES */
+    #teorie { background: var(--warm); }
+
+    .theories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .theory-card {
+      background: var(--cream);
+      border: 1px solid var(--sand);
+      border-radius: 1rem;
+      padding: 1.75rem 1.5rem;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .theory-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(10,46,42,.1);
+    }
+
+    .theory-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: .6rem;
+    }
+
+    .theory-card .author {
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: .75rem;
+    }
+
+    .theory-card p { font-size: .88rem; color: #4a5a58; line-height: 1.65; }
+
+    /* EXTINCTIONS */
+    #estinzioni { background: var(--sand); }
+
+    .ext-bar { margin-top: 3rem; display: grid; gap: 1.25rem; }
+
+    .ext-row {
+      display: grid;
+      grid-template-columns: 200px 1fr auto;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .ext-name { font-weight: 600; font-size: .9rem; color: var(--deep); }
+    .ext-mya { font-size: .78rem; color: #7a8a88; }
+
+    .ext-track {
+      background: rgba(10,46,42,.08);
+      border-radius: 2rem;
+      height: 10px;
+      overflow: hidden;
+    }
+
+    .ext-fill {
+      height: 100%;
+      border-radius: 2rem;
+      background: linear-gradient(to right, var(--teal), var(--sage));
+    }
+
+    .ext-pct {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--teal);
+      min-width: 50px;
+      text-align: right;
+    }
+
+    /* RARE ANIMALS */
+    #specie {
+      background: var(--deep);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #specie::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 0%, rgba(14,102,85,.35) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 50% at 90% 90%, rgba(201,168,76,.1) 0%, transparent 60%);
+    }
+
+    #specie .container-wide { position: relative; z-index: 1; }
+    #specie .section-label { color: var(--amber); }
+    #specie .section-title { color: #fff; }
+    #specie .section-title em { color: var(--amber); }
+    #specie .lead { color: rgba(255,255,255,.65); }
+
+    .species-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .species-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 1.25rem;
+      overflow: hidden;
+      transition: transform .3s, border-color .3s;
+    }
+
+    .species-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(201,168,76,.4);
+    }
+
+    .species-visual {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+    }
+
+    .species-card-body { padding: 1.5rem; }
+
+    .species-status {
+      display: inline-block;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .25rem .75rem;
+      border-radius: 2rem;
+      margin-bottom: .75rem;
+    }
+
+    .status-cr { background: rgba(220,53,53,.2); color: #ff7b7b; }
+    .status-en { background: rgba(220,140,40,.2); color: #ffbe6b; }
+    .status-vu { background: rgba(50,160,100,.2); color: #7ddfab; }
+
+    .species-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .25rem;
+    }
+
+    .species-name-sci {
+      font-style: italic;
+      font-size: .8rem;
+      color: rgba(255,255,255,.45);
+      margin-bottom: .75rem;
+    }
+
+    .species-card p { font-size: .875rem; color: rgba(255,255,255,.65); line-height: 1.65; }
+
+    .species-facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .5rem;
+      margin-top: 1rem;
+    }
+
+    .species-fact {
+      background: rgba(255,255,255,.06);
+      border-radius: .5rem;
+      padding: .5rem .75rem;
+    }
+
+    .species-fact dt {
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: .15rem;
+    }
+	.species-visual {
+      height: 160px;
+      overflow: hidden;
+}
+
+    .species-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+}
+
+    .species-fact dd { font-size: .82rem; color: rgba(255,255,255,.75); }
+
+    /* CONCLUSION */
+    #conclusione { background: var(--warm); border-top: 1px solid var(--sand); }
+
+    .quote-block {
+      background: var(--cream);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 1rem 1rem 0;
+      padding: 2rem 2.5rem;
+      margin-top: 3rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--deep);
+      line-height: 1.65;
+    }
+
+    .text-content p { margin-bottom: 1rem; font-size: .95rem; color: #3a4a48; }
+
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,.4);
+      text-align: center;
+      padding: 2.5rem;
+      font-size: .8rem;
+      letter-spacing: .05em;
+    }
+
+    @media (max-width: 768px) {
+      .intro-grid { grid-template-columns: 1fr; }
+      .ext-row { grid-template-columns: 1fr; }
+      .ext-pct { text-align: left; }
+      .timeline::before { left: 1rem; }
+      .tl-item { padding-left: 3.5rem; }
+      .tl-dot { left: calc(1rem - 7px); }
+    }
+	
+  </style>
+</head>
+<body>
+
+<nav class="nav-strip">
+  
+ <a href="#intro">Introduzione</a>
+  <a href="#timeline">Linea del Tempo</a>
+  <a href="#teorie">Teorie</a>
+  <a href="#estinzioni">Estinzioni</a>
+  <a href="#specie">Specie Rare</a>
+  <a href="#conclusione">Conclusione</a>
+</nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-dots"></div>
+    <div class="hero-content">
+     <h1>L'evoluzione degli esseri viventi<br /><em>nel corso della storia</em></h1>
+      <p class="hero-sub">
+        Dai primi procarioti comparsi 3,8 miliardi di anni fa alle straordinarie forme di vita
+        che abitano oggi il nostro pianeta: un viaggio attraverso il tempo e la biodiversità.
+      </p>
+      <a class="hero-scroll" href="#intro">
+        Scopri
+        <span class="hero-scroll-line"></span>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- INTRODUZIONE -->
+  <section id="intro">
+    <div class="container">
+      <h2 class="section-title">Quattro miliardi di anni<br /><em>di trasformazione continua</em></h2>
+      <div class="divider"></div>
+      <p class="lead">
+        L'evoluzione biologica è il processo attraverso il quale gli esseri viventi si sono modificati nel tempo,
+        dando origine all'enorme biodiversità del nostro pianeta. Tutti gli organismi condividono antenati comuni
+        e sono il risultato di una storia iniziata circa 3,8–4 miliardi di anni fa.
+      </p>
+      <div class="intro-grid">
+        <div class="text-content">
+          <p>
+            Lo studio dell'evoluzione permette di comprendere come siano nate nuove specie, come gli organismi si siano
+            adattati ai cambiamenti ambientali e quali relazioni esistano tra le diverse forme di vita.
+          </p>
+          <p>
+            La Terra si formò circa 4,6 miliardi di anni fa. Nelle prime ere era caratterizzata da intense attività
+            vulcaniche, alte temperature e frequenti impatti meteorici. In queste condizioni si svilupparono le prime
+            molecole organiche, fino alla comparsa delle prime cellule procariotiche.
+          </p>
+          <p>
+            Un evento cruciale fu la <strong>"Grande Ossidazione"</strong>, avvenuta circa 2,4 miliardi di anni fa:
+            i cianobatteri iniziarono a liberare ossigeno nell'atmosfera, trasformando radicalmente il pianeta e
+            rendendo possibile l'evoluzione di organismi più complessi.
+          </p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div class="intro-stat">
+            <strong>4,6 Mld</strong>
+            <span>Anni — Formazione della Terra</span>
+          </div>
+          <div class="intro-stat">
+            <strong>3,8 Mld</strong>
+            <span>Anni — Prime forme di vita</span>
+          </div>
+          <div class="intro-stat">
+            <strong>2,4 Mld</strong>
+            <span>Anni — Grande Ossidazione</span>
+          </div>
+          <div class="intro-stat">
+            <strong>~8,7 Mln</strong>
+            <span>Specie stimate sulla Terra oggi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="container">
+      <p class="section-label">Cronologia evolutiva</p>
+      <h2 class="section-title">Tappe fondamentali<br /><em>nella storia della vita</em></h2>
+      <div class="divider"></div>
+      <p class="lead">
+        Dalla comparsa dei primi procarioti fino all'Homo sapiens: un percorso lungo miliardi di anni
+        scandito da innovazioni biologiche rivoluzionarie.
+      </p>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <p class="tl-era">~ 3,8 miliardi di anni fa</p>
+          <h3>I Procarioti — Le prime forme di vita</h3>
+          <p>Organismi unicellulari privi di un vero nucleo. Dominarono la Terra per oltre due miliardi di anni,
+          sviluppando fotosintesi, respirazione aerobica, chemiosintesi e resistenza a condizioni estreme.
+          Le Archea ancora oggi prosperano in ambienti vulcanici e ipersalini.</p>
+          <div class="tl-tags">
+            <span class="tl-tag">Batteri</span>
+            <span class="tl-tag">Archea</span>
+            <span class="tl-tag">Cianobatteri</span>
+            <span class="tl-tag">Anaerobi</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <p class="tl-era">~ 2 miliardi di anni fa</p>
+          <h3>Gli Eucarioti e i Protisti</h3>
+          <p>Compaiono le prime cellule con nucleo delimitato da membrana. Secondo la teoria endosimbiotica di
+          Lynn Margulis, mitocondri e cloroplasti derivano da antichi batteri inglobati. Da antichi protisti
+          deriveranno piante, funghi e animali.</p>
+          <div class="tl-tags">
+            <span class="tl-tag">Nucleo</span>
+            <span class="tl-tag">Mitocondri</span>
+            <span class="tl-tag">Endosimbiosi</span>
+            <span class="tl-tag">Protisti</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <p class="tl-era">~ 1 miliardo di anni fa</p>
+          <h3>I Funghi — Decompositrici della biosfera</h3>
+          <p>I funghi sviluppano le ife, strutture che formano il micelio. Svolgono un ruolo fondamentale nella
+          colonizzazione delle terre emerse grazie alle micorrize, simbiosi con le piante che favorisce
+          l'assorbimento di acqua e sali minerali.</p>
+          <div class="tl-tags">
+            <span class="tl-tag">Micelio</span>
+            <span class="tl-tag">Micorrize</span>
+            <span class="tl-tag">Decompositori</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <p class="tl-era">~ 500 milioni di anni fa</p>
+          <h3>Le Piante — La conquista della terra ferma</h3>
+          <p>Antiche alghe verdi iniziano a colonizzare le terre emerse sviluppando tessuti vascolari e
+          protezioni dalla disidratazione. L'evoluzione procede dalle briofite alle pteridofite, gimnosperme
+          e angiosperme — oggi gruppo vegetale dominante sul pianeta.</p>
+          <div class="tl-tags">
+            <span class="tl-tag">Briofite</span>
+            <span class="tl-tag">Felci</span>
+            <span class="tl-tag">Conifere</span>
+            <span class="tl-tag">Angiosperme</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <p class="tl-era">~ 541 milioni di anni fa</p>
+          <h3>L'Esplosione Cambriana</h3>
+          <p>In un intervallo geologicamente brevissimo compaiono quasi tutti i principali piani corporei
+          degli animali. Strutture nuove, maggiore complessità anatomica e specializzazione degli organi.
+          Invertebrati, molluschi, artropodi ed echinodermi si moltiplicano negli oceani primordiali.</p>
+          <div class="tl-tags">
+            <span class="tl-tag">Invertebrati</span>
+            <span class="tl-tag">Artropodi</span>
+            <span class="tl-tag">Molluschi</span>
+            <span class="tl-tag">Echinodermi</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <p class="tl-era">~ 370 milioni di anni fa</p>
+          <h3>Anfibi e Rettili — L'invasione della terraferma</h3>
+          <p>Alcuni pesci iniziano a colonizzare le terre emerse: da essi derivano gli anfibi. Lo sviluppo
+          dell'uovo amniotico nei rettili rese possibile una vita completamente terrestre, senza dipendenza
+          dall'acqua per la riproduzione.</p>
+          <div class="tl-tags">
+            <span class="tl-tag">Anfibi</span>
+            <span class="tl-tag">Rettili</span>
+            <span class="tl-tag">Uovo amniotico</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <p class="tl-era">~ 230 milioni di anni fa</p>
+          <h3>I Dinosauri — Signori della Terra</h3>
+          <p>I dinosauri dominano il pianeta per oltre 165 milioni di anni. La grande estinzione di massa
+          di 66 milioni di anni fa, legata all'impatto di un asteroide, pose fine al loro dominio aprendo
+          nuove opportunità per mammiferi e uccelli.</p>
+          <div class="tl-tags">
+            <span class="tl-tag">Mesozoico</span>
+            <span class="tl-tag">Teropodi</span>
+            <span class="tl-tag">Estinzione K-Pg</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <p class="tl-era">~ 66 milioni di anni fa — ad oggi</p>
+          <h3>Uccelli e Mammiferi — L'era dei sangue caldo</h3>
+          <p>Gli uccelli derivano da piccoli dinosauri teropodi. I mammiferi si diversificano enormemente
+          dopo la scomparsa dei dinosauri. Sviluppo del cervello, cura parentale e termoregolazione
+          favoriscono il loro straordinario successo evolutivo.</p>
+          <div class="tl-tags">
+            <span class="tl-tag">Mammiferi</span>
+            <span class="tl-tag">Uccelli</span>
+            <span class="tl-tag">Termoregolazione</span>
+            <span class="tl-tag">Cenozoico</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--amber);"></div>
+          <p class="tl-era">~ 300.000 anni fa</p>
+          <h3>Homo sapiens — La comparsa dell'umanità</h3>
+          <p>La specie umana appare in Africa. L'evoluzione umana è caratterizzata dalla postura eretta,
+          dal linguaggio articolato, dal pensiero simbolico e dalla cultura. In poche decine di migliaia
+          di anni Homo sapiens colonizza ogni angolo del pianeta.</p>
+          <div class="tl-tags">
+            <span class="tl-tag">Postura eretta</span>
+            <span class="tl-tag">Linguaggio</span>
+            <span class="tl-tag">Cultura</span>
+            <span class="tl-tag">Africa</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TEORIE -->
+  <section id="teorie">
+    <div class="container">
+      <p class="section-label">Storia del pensiero scientifico</p>
+      <h2 class="section-title">Le teorie<br /><em>sull'evoluzione</em></h2>
+      <div class="divider"></div>
+      <p class="lead">
+        Prima dell'affermazione della teoria moderna, diversi studiosi cercarono di spiegare l'origine e
+        la diversità degli organismi. Ogni teoria è una tappa fondamentale verso la comprensione scientifica.
+      </p>
+      <div class="theories-grid">
+
+        <div class="theory-card">
+          <div class="author">Pensiero tradizionale</div>
+          <h3>Fissismo</h3>
+          <p>Le specie siano state create esattamente come appaiono oggi e rimangano immutabili nel tempo.
+          Ogni specie è stata creata separatamente e non esiste trasformazione evolutiva. Dominò il pensiero
+          occidentale per molti secoli, collegato alle interpretazioni religiose della creazione.</p>
+        </div>
+
+        <div class="theory-card">
+          <div class="author">Georges Cuvier</div>
+          <h3>Catastrofismo</h3>
+          <p>Osservando i fossili, Cuvier notò che molte specie del passato erano scomparse. Spiegò questo
+          attraverso grandi catastrofi naturali che avrebbero causato estinzioni periodiche. Pur non essendo
+          evoluzionistica, dimostrò che la fauna terrestre era cambiata nel tempo.</p>
+        </div>
+
+        <div class="theory-card">
+          <div class="author">Jean-Baptiste Lamarck · XIX sec.</div>
+          <h3>Lamarckismo</h3>
+          <p>Prima vera teoria evolutiva. Gli organi più usati si sviluppano, quelli meno usati si atrofizzano,
+          e i caratteri acquisiti vengono trasmessi ai discendenti. Fondamentale per aver introdotto
+          il concetto di trasformazione delle specie nel tempo.</p>
+        </div>
+
+        <div class="theory-card">
+          <div class="author">Charles Lyell</div>
+          <h3>Gradualismo</h3>
+          <p>I cambiamenti evolutivi avvengono lentamente attraverso l'accumulo di piccole variazioni,
+          su periodi geologici lunghissimi. Questa visione geologica ebbe profonda influenza sul pensiero
+          di Darwin e sulla comprensione dei tempi dell'evoluzione.</p>
+        </div>
+
+        <div class="theory-card">
+          <div class="author">Charles Darwin · 1859</div>
+          <h3>Darwinismo</h3>
+          <p>Variabilità ereditaria, sovrapproduzione, lotta per l'esistenza e selezione naturale.
+          Gli individui con caratteristiche vantaggiose sopravvivono e si riproducono di più.
+          Prima spiegazione scientifica coerente dell'evoluzione, tutt'oggi fondamentale.</p>
+        </div>
+
+        <div class="theory-card" style="border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.06);">
+          <div class="author">XX secolo — Teoria attuale</div>
+          <h3>Sintesi Moderna</h3>
+          <p>Darwin integrato con la genetica mendeliana. Mutazioni generano nuova variabilità,
+          la ricombinazione produce nuove combinazioni, la selezione naturale favorisce i più adatti,
+          deriva genetica e migrazioni influenzano le popolazioni nel tempo.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTINZIONI -->
+  <section id="estinzioni">
+    <div class="container">
+      <p class="section-label">Grandi eventi</p>
+      <h2 class="section-title">Le cinque <em>estinzioni di massa</em></h2>
+      <div class="divider"></div>
+      <p class="lead">
+        La storia della vita è segnata da eventi catastrofici. Ogni estinzione ha aperto nuove opportunità
+        evolutive per i sopravvissuti, accelerando la diversificazione della vita sul pianeta.
+      </p>
+      <div class="ext-bar">
+        <div class="ext-row">
+          <div>
+            <div class="ext-name">Ordoviciano-Siluriano</div>
+            <div class="ext-mya">~443 milioni di anni fa</div>
+          </div>
+          <div class="ext-track"><div class="ext-fill" style="width:85%"></div></div>
+          <div class="ext-pct">~85%</div>
+        </div>
+        <div class="ext-row">
+          <div>
+            <div class="ext-name">Devoniano Tardivo</div>
+            <div class="ext-mya">~375 milioni di anni fa</div>
+          </div>
+          <div class="ext-track"><div class="ext-fill" style="width:75%"></div></div>
+          <div class="ext-pct">~75%</div>
+        </div>
+        <div class="ext-row">
+          <div>
+            <div class="ext-name">Permiano-Triassico</div>
+            <div class="ext-mya">~252 milioni di anni fa</div>
+          </div>
+          <div class="ext-track"><div class="ext-fill" style="width:96%"></div></div>
+          <div class="ext-pct">~96%</div>
+        </div>
+        <div class="ext-row">
+          <div>
+            <div class="ext-name">Triassico-Giurassico</div>
+            <div class="ext-mya">~201 milioni di anni fa</div>
+          </div>
+          <div class="ext-track"><div class="ext-fill" style="width:80%"></div></div>
+          <div class="ext-pct">~80%</div>
+        </div>
+        <div class="ext-row">
+          <div>
+            <div class="ext-name">Cretaceo-Paleogene (K-Pg)</div>
+            <div class="ext-mya">~66 milioni di anni fa</div>
+          </div>
+          <div class="ext-track"><div class="ext-fill" style="width:76%"></div></div>
+          <div class="ext-pct">~76%</div>
+        </div>
+      </div>
+      <p style="margin-top:1.5rem;font-size:.82rem;color:#7a8a88;">
+        Le percentuali indicano la stima approssimativa di specie marine andate estinte in ciascun evento.
+      </p>
+    </div>
+  </section>
+
+  <!-- SPECIE ANIMALI RARE -->
+  <section id="specie">
+    <div class="container-wide">
+      <p class="section-label">Approfondimento</p>
+      <h2 class="section-title">Specie animali <em>rare</em></h2>
+      <div class="divider" style="background:linear-gradient(to right,var(--gold),var(--amber));"></div>
+      <p class="lead">
+        Alcune delle creature piu straordinarie del pianeta sono oggi sull'orlo dell'estinzione.
+        Questi animali — spesso relitti di ere passate o rami evolutivi unici — ci offrono uno sguardo
+        irripetibile sulla storia della vita. Perderli significherebbe cancellare per sempre milioni
+        di anni di evoluzione.
+      </p>
+
+      <div class="species-grid">
+
+        <div class="species-card">
+         <div class="species-visual">
+          <img src="https://storage.googleapis.com/tribunamexico/2025/07/vaquita-marina-seis-ocho.jpg.webp" alt="Vaquita Marina">
+          </div>
+          <div class="species-card-body">
+            <span class="species-status status-cr">Critico</span>
+            <h3>Vaquita Marina</h3>
+            <p class="species-name-sci">Phocoena sinus</p>
+            <p>Il cetaceo piu raro al mondo. Vive esclusivamente nel Golfo di California con meno di
+            10 esemplari stimati. Questa piccola focena porta cerchi neri attorno agli occhi come una
+            maschera unica in natura. Rischia l'estinzione a causa delle reti da pesca illegale.</p>
+            <dl class="species-facts">
+              <div class="species-fact"><dt>Esemplari</dt><dd>&lt; 10</dd></div>
+              <div class="species-fact"><dt>Habitat</dt><dd>Golfo California</dd></div>
+              <div class="species-fact"><dt>Minaccia</dt><dd>Reti illegali</dd></div>
+              <div class="species-fact"><dt>Lunghezza</dt><dd>~1,5 m</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="species-card">
+         <div class="species-visual">
+          <img src="https://i.ytimg.com/vi/48LhMBog6k8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB25F1MmnbHOOoaypZ6RkWAXTprUg" alt="Axolot">
+          </div>
+          <div class="species-card-body">
+            <span class="species-status status-cr">Critico</span>
+            <h3>Axolotl</h3>
+            <p class="species-name-sci">Ambystoma mexicanum</p>
+            <p>Un anfibio che conserva le caratteristiche larvali per tutta la vita — un fenomeno
+            detto neotenia. Endemico del lago Xochimilco in Messico, possiede capacita rigenerative
+            uniche: puo ricrescere arti, parti del cuore e frammenti del sistema nervoso centrale.</p>
+            <dl class="species-facts">
+              <div class="species-fact"><dt>Esemplari</dt><dd>~50–1.000</dd></div>
+              <div class="species-fact"><dt>Habitat</dt><dd>Lago Xochimilco</dd></div>
+              <div class="species-fact"><dt>Peculiarita</dt><dd>Rigenerazione</dd></div>
+              <div class="species-fact"><dt>Minaccia</dt><dd>Inquinamento</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="species-card">
+          <div class="species-visual">
+          <img src="https://media.wired.com/photos/59326c6058b0d64bb35d1809/3:2/w_2560%2Cc_limit/Kakapo-2.jpg" alt="Kakapo">
+          </div>
+          <div class="species-card-body">
+            <span class="species-status status-cr">Critico</span>
+            <h3>Kakapo</h3>
+            <p class="species-name-sci">Strigops habroptilus</p>
+            <p>Il pappagallo piu pesante del mondo e l'unico incapace di volare. Notturno e solitario,
+            ha sopravvissuto per milioni di anni in Nuova Zelanda in assenza di predatori terrestri.
+            Oggi meno di 250 individui sopravvivono in isole protette.</p>
+            <dl class="species-facts">
+              <div class="species-fact"><dt>Esemplari</dt><dd>~250</dd></div>
+              <div class="species-fact"><dt>Habitat</dt><dd>Nuova Zelanda</dd></div>
+              <div class="species-fact"><dt>Peso</dt><dd>Fino a 4 kg</dd></div>
+              <div class="species-fact"><dt>Longevita</dt><dd>~90 anni</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="species-card">
+          <div class="species-visual">
+          <img src="https://www.focus.it/site_stored/imgs/0005/018/nde003710c-1_preview.900x600.jpg" alt="Pangolino">
+          </div>
+          <div class="species-card-body">
+            <span class="species-status status-en">In pericolo</span>
+            <h3>Pangolino</h3>
+            <p class="species-name-sci">Manis spp.</p>
+            <p>Il mammifero piu trafficato al mondo. Il suo corpo e coperto da scaglie di cheratina —
+            adattamento evolutivo unico tra i mammiferi. Si arrotola su se stesso per proteggersi.
+            Tutte le otto specie esistenti sono minacciate dal bracconaggio.</p>
+            <dl class="species-facts">
+              <div class="species-fact"><dt>Specie</dt><dd>8 esistenti</dd></div>
+              <div class="species-fact"><dt>Minaccia</dt><dd>Bracconaggio</dd></div>
+              <div class="species-fact"><dt>Scaglie</dt><dd>Cheratina</dd></div>
+              <div class="species-fact"><dt>Habitat</dt><dd>Africa, Asia</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="species-card">
+         <div class="species-visual">
+          <img src="https://s3.animalia.bio/animals/photos/full/original/okapi.webp" alt="Okapi">
+          </div>
+          <div class="species-card-body">
+            <span class="species-status status-en">In pericolo</span>
+            <h3>Okapi</h3>
+            <p class="species-name-sci">Okapia johnstoni</p>
+            <p>Scoperto dalla scienza solo nel 1901, e l'unico parente vivente della giraffa.
+            Le sue zampe zebrate contrastano con il corpo scuro in un mimetismo perfetto per
+            le foreste del Congo. Rimasto sconosciuto agli europei fino al XX secolo.</p>
+            <dl class="species-facts">
+              <div class="species-fact"><dt>Scoperta</dt><dd>Anno 1901</dd></div>
+              <div class="species-fact"><dt>Habitat</dt><dd>Foreste Congo</dd></div>
+              <div class="species-fact"><dt>Parente</dt><dd>Giraffa</dd></div>
+              <div class="species-fact"><dt>Altezza</dt><dd>~1,5–2 m</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="species-card">
+          <div class="species-visual">
+           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbOlPkCkB2vWtBHkDoADV_sd6IfDfjk1oWkg&s" alt="Ornitorinco">
+           </div>
+          <div class="species-card-body">
+            <span class="species-status status-vu">Vulnerabile</span>
+            <h3>Ornitorinco</h3>
+            <p class="species-name-sci">Ornithorhynchus anatinus</p>
+            <p>Un mammifero che depone le uova, con becco d'anatra e coda di castoro. Quando fu
+            descritto agli zoologi europei, pensarono fosse uno scherzo. Monotremo tra le linee
+            evolutive piu antiche, percepisce i campi elettrici delle prede attraverso il becco.</p>
+            <dl class="species-facts">
+              <div class="species-fact"><dt>Tipo</dt><dd>Monotremo</dd></div>
+              <div class="species-fact"><dt>Habitat</dt><dd>Australia</dd></div>
+              <div class="species-fact"><dt>Riproduzione</dt><dd>Depone uova</dd></div>
+              <div class="species-fact"><dt>Senso</dt><dd>Elettroricezione</dd></div>
+            </dl>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Alert conservazione -->
+      <div style="margin-top:3rem;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.25);border-radius:1.25rem;padding:2rem 2.5rem;display:flex;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;">
+        <div style="font-size:2rem;flex-shrink:0;color:var(--amber);">&#x26A0;</div>
+        <div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--amber);margin-bottom:.5rem;">La sesta estinzione di massa e in corso</h3>
+          <p style="font-size:.9rem;color:rgba(255,255,255,.65);max-width:680px;line-height:1.7;">
+            Gli scienziati concordano che stiamo attraversando una sesta estinzione di massa, questa volta causata
+            dall'attivita umana. Il tasso attuale di perdita di specie e stimato 100-1.000 volte superiore al tasso
+            naturale. Ogni specie perduta rappresenta un ramo evolutivo irrecuperabile — milioni di anni di
+            adattamenti unici cancellati per sempre.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCLUSIONE -->
+  <section id="conclusione">
+    <div class="container">
+      <p class="section-label">Riflessioni finali</p>
+      <h2 class="section-title">Un processo <em>senza fine</em></h2>
+      <div class="divider"></div>
+      <div class="text-content">
+        <p>L'evoluzione degli esseri viventi e un processo continuo che ha trasformato semplici cellule procariotiche
+        nelle straordinarie forme di vita presenti oggi sulla Terra. Procarioti, protisti, funghi, piante e animali
+        condividono una storia comune lunga miliardi di anni, caratterizzata da adattamenti, innovazioni biologiche,
+        estinzioni e diversificazioni.</p>
+        <p>Le teorie del fissismo, del catastrofismo, del lamarckismo, del gradualismo e del darwinismo rappresentano
+        tappe fondamentali nello sviluppo del pensiero scientifico. Le moderne conoscenze genetiche e paleontologiche
+        confermano che tutte le forme di vita sono collegate da relazioni evolutive profonde.</p>
+        <p>Le specie animali rare che ancora abitano il nostro pianeta sono testimoni viventi di questo lungo viaggio
+        evolutivo. La loro sopravvivenza non e solo una questione di conservazione: e la tutela della memoria
+        biologica del pianeta, un patrimonio condiviso che appartiene alla storia dell'intera biosfera.</p>
+      </div>
+      <div class="quote-block">
+        "La biodiversita attuale e il risultato di un lungo processo di cambiamento che continua ancora oggi —
+        e nella cui continuazione la nostra specie gioca, per la prima volta nella storia della vita,
+        un ruolo consapevole e determinante."
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-top:3rem;">
+        <div style="text-align:center;padding:1.5rem 1rem;background:var(--cream);border-radius:1rem;border:1px solid var(--sand);">
+          <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--teal);">5</div>
+          <div style="font-size:.8rem;color:#5a6a68;margin-top:.25rem;">Grandi estinzioni di massa</div>
+        </div>
+        <div style="text-align:center;padding:1.5rem 1rem;background:var(--cream);border-radius:1rem;border:1px solid var(--sand);">
+          <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--teal);">6</div>
+          <div style="font-size:.8rem;color:#5a6a68;margin-top:.25rem;">Regni della vita</div>
+        </div>
+        <div style="text-align:center;padding:1.5rem 1rem;background:var(--cream);border-radius:1rem;border:1px solid var(--sand);">
+          <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--teal);">41k+</div>
+          <div style="font-size:.8rem;color:#5a6a68;margin-top:.25rem;">Specie minacciate (IUCN)</div>
+        </div>
+        <div style="text-align:center;padding:1.5rem 1rem;background:var(--cream);border-radius:1rem;border:1px solid var(--sand);">
+          <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--teal);">3,8Mld</div>
+          <div style="font-size:.8rem;color:#5a6a68;margin-top:.25rem;">Anni di storia della vita</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div style="font-family:'Playfair Display',serif;font-size:.9rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;">
+      L'evoluzione degli esseri viventi nel corso della storia
+    </div>
+    <div>Biologia Evolutiva &middot; Approfondimento: Specie animali rare</div>
+  </footer>
+
+</body>
+</html>
